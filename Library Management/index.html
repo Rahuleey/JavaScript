@@ -9,11 +9,22 @@
 </head>
 
 <body>
-    <div class="timer-container">
-        <input type="text" class="user-input" id="defuser" />
-        <br />
-        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/time-bomb-img.png" class="bomb-image" />
-        <p class="timer-display" id="timer">10</p>
+    <div class="container">
+        <div class="row">
+            <div class="p-4 col-12 main">
+                <h1 class="head">Library<br>Management</h1>
+                <input class="form-control mt-5" placeholder="Type book title" type="search" id="searchInput" />
+            </div>
+            <div class="col-12">
+                <div class="mt-3 text-center">
+                    <div id="spinner" class="d-none spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <p id="message"></p>
+                </div>
+            </div>
+            <div id="searchResults" class="col-12 res-cont p-2"> </div>
+        </div>
     </div>
 </body>
 
