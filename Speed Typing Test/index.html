@@ -9,11 +9,35 @@
 </head>
 
 <body>
-    <div class="timer-container">
-        <input type="text" class="user-input" id="defuser" />
-        <br />
-        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/time-bomb-img.png" class="bomb-image" />
-        <p class="timer-display" id="timer">10</p>
+    <div class="container" id="speedTypingTest">
+        <div class="row">
+            <div class="main-bg">
+                <h1 class="head">Speed<br> Typing Test</h1>
+                <p class="lets-go mt-4 mb-4">On your fingers lets set Go!</p>
+                <div class="d-flex flex-row ">
+                    <img src="https://assets.ccbp.in/frontend/dynamic-webapps/clock-img.png" class="img mr-4" />
+                    <p id="timer" class="time">0</p>
+                    <p class="sec ml-2 mt-3">seconds</p>
+                </div>
+                <div class="cont mt-4">
+                    <p id="quoteDisplay" class="res"></p>
+                    <textarea placeholder="Type Here" class="form-control" id="quoteInput" rows="5" cols="20"></textarea>
+                </div>
+
+                <div class="text-center text-light mt-3">
+                    <div id="spinner" class="d-none spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+
+                <p id="result" class="res mt-4 mb-4 "></p>
+                <div>
+                    <button class=" submit mr-4" id="submitBtn" type="submit">Submit</button>
+                    <button class=" reset" id="resetBtn" type="submit">Reset</button>
+                </div>
+            </div>
+
+        </div>
     </div>
 </body>
 
