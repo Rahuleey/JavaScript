@@ -9,11 +9,32 @@
 </head>
 
 <body>
-    <div class="timer-container">
-        <input type="text" class="user-input" id="defuser" />
-        <br />
-        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/time-bomb-img.png" class="bomb-image" />
-        <p class="timer-display" id="timer">10</p>
+    <div class="main">
+        <p>Hello<br><span class="name">Jane Doe</span></p>
+        <div class="cont">
+            <h1>Bookmark Your Favourite Sites</h1>
+            <div class="cont2">
+                <form id="bookmarkForm">
+                    <div>
+                        <label for="siteNameInput" class="sub-head">SITE NAME</label>
+                        <input type="text" class="form-control" id="siteNameInput" placeholder="Enter site name" />
+                        <p id="siteNameErrMsg" class="er"></p>
+                    </div>
+                    <div>
+                        <label for="siteUrlInput" class="sub-head">SITE URL</label>
+                        <input type="text" class="form-control" id="siteUrlInput" placeholder="Enter site URL" />
+                        <p id="siteUrlErrMsg" class="er"></p>
+                    </div>
+                    <div class="d-flex flex-row justify-content-end">
+                        <button class="btn btn-primary but" id="submitBtn">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <ul class="d-none" id="bookmarksList"></ul>
+            </div>
+
+        </div>
     </div>
 </body>
 
