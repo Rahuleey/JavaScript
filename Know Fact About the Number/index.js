@@ -1,20 +1,36 @@
-let defuserEl = document.getElementById("defuser");
-let timeEl = document.getElementById("timer");
-let count = 10;
+let inputEl = document.getElementById("userInput");
+let facts = document.getElementById("fact");
+let spinnerEl = document.getElementById("spinner");
 
-let timeReduce = setInterval(function() {
-    count -= 1;
-    timeEl.textContent = count;
-    if (count === 0) {
-        timeEl.textContent = "BOOM";
-        clearInterval(timeReduce);
-    }
-}, 1000);
+function getFact(event) {
+    if (event.key === "Enter") {
+        let userEl = inputEl.value;
+        if (userEl === "") {
+            alert("Enter a number");
+            return
+        }
 
-defuserEl.addEventListener("keydown", function(event) {
-    let userText = defuserEl.value;
-    if (event.key === "Enter" && userText === "defuse" && count !== 0) {
-        timeEl.textContent = "You did it!";
-        clearInterval(timeReduce);
+        let url = "https://apis.ccbp.in/numbers-fact?number=" + userEl;
+        let options = {
+            method: "GET",
+        };
+
+        spinnerEl.classList.remove("d-none");
+        facts.classList.add("d-none");
+
+        fetch(url, options)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(jsonData) {
+                facts.classList.remove("d-none");
+                spinnerEl.classList.add("d-none");
+                let {
+                    fact
+                } = jsonData;
+                facts.textContent = fact;
+            });
+
     }
-});
+}
+inputEl.addEventListener("keyup", getFact);
