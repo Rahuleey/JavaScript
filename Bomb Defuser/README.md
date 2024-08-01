@@ -1,12 +1,13 @@
 ### BOMB DEFUSER
 ![image](https://github.com/user-attachments/assets/75a0272d-40f7-4543-8ae5-f340f1e0ea34)
+
+
 Instructions:
 
 Add an id defuser to the HTML input element
 Add an id timer to the HTML paragraph element
 Set the time interval for 10 seconds
-Warning
-Do not delete the prefilled code.
+
 
 Achieve the given functionality to the given prefilled code.
 
