@@ -1,6 +1,8 @@
 ### Countries Search Page
 
 Refer to the below image.
+![Uploading image.png…]()
+
 
 [https://assets.ccbp.in/frontend/content/dynamic-webapps/countries-search-page-output-v2.gif](https://assets.ccbp.in/frontend/content/dynamic-webapps/countries-search-page-output-v2.gif)
 
