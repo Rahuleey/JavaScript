@@ -9,11 +9,19 @@
 </head>
 
 <body>
-    <div class="timer-container">
-        <input type="text" class="user-input" id="defuser" />
-        <br />
-        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/time-bomb-img.png" class="bomb-image" />
-        <p class="timer-display" id="timer">10</p>
+    <div class="main-container">
+        <div class="wiki-search-header text-center">
+            <img class="wiki-logo" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/wiki-logo-img.png" />
+            <br />
+            <input id="searchInput" placeholder="Type a keyword and press Enter to search" type="search" class="search-input w-100" />
+        </div>
+        <div class="d-none" id="spinner">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                </div>
+            </div>
+        </div>
+        <div id="searchResults" class="search-results"></div>
     </div>
 </body>
 
