@@ -1,53 +1,68 @@
-let mainEl = document.getElementById("speedTypingTest");
-let timerEl = document.getElementById("timer");
-let quoteDisplayEl = document.getElementById("quoteDisplay");
-let resultEl = document.getElementById("result");
-let quoteInputEl = document.getElementById("quoteInput");
-let submitBtnEl = document.getElementById("submitBtn");
-let resetBtnEl = document.getElementById("resetBtn");
-let spinnerEl = document.getElementById("spinner");
-let counter = 0;
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
 
-spinnerEl.classList.toggle("d-none");
-
-function startCounter() {
-    counter += 1;
-    timerEl.textContent = counter;
-}
-let counterVal = setInterval(startCounter, 1000);
-
-function getQuote() {
-    let options = {
-        method: "GET"
-    }
-    fetch("https://apis.ccbp.in/random-quote", options)
-        .then(function(response) {
-            return response.json()
-        })
-        .then(function(jsonData) {
-            spinnerEl.classList.add("d-none");
-            let quote = jsonData.content;
-            quoteDisplayEl.textContent = quote;
-        });
-}
-getQuote();
-startCounter();
-
-
-resetBtnEl.onclick = function() {
-    spinnerEl.classList.remove("d-none");
-    counter = 0;
-    getQuote();
-    startCounter();
-    resultEl.textContent = "";
-    quoteInputEl.textContent = "";
+.main-bg {
+    background-color: #dac0ff;
+    height: 130vh;
+    background-size: cover;
+    padding: 20px;
 }
 
-submitBtnEl.onclick = function() {
-    if (quoteInputEl.value === quoteDisplayEl.textContent) {
-        clearInterval(counterVal);
-        resultEl.textContent = "You typed in " + counter + " seconds";
-    } else {
-        resultEl.textContent = "You typed incorrect sentence";
-    }
+.head {
+    color: #690cb0;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.lets-go {
+    color: #3e4c59;
+    font-size: 18px;
+}
+
+.img {
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+}
+
+.sec {
+    color: #3e4c59;
+    font-weight: 400;
+}
+
+.cont {
+    background-color: #f3eaff;
+    background-size: cover;
+    padding: 20px;
+    border: 2px solid #9aa5b1;
+    border-radius: 10px;
+}
+
+.submit {
+    color: #ffffff;
+    height: 43px;
+    width: 80px;
+    background-color: #690cb0;
+    border-radius: 7px;
+    border-style: none;
+}
+
+.reset {
+    color: black;
+    height: 43px;
+    width: 80px;
+    font-weight: bold;
+    background-color: #ffffff;
+    border-radius: 7px;
+    border-style: none;
+}
+
+.time {
+    font-size: 35px;
+    color: #323f4b;
+}
+
+.res {
+    font-size: 18px;
+    color: #3e4c59;
+    font-weight: 500;
 }
